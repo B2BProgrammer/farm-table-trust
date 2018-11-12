@@ -1,0 +1,12 @@
+version: '2'
+services:
+    postgres:
+        image: postgres:latest
+        container_name: "postgres0"
+        ports:
+            - 5432:5432
+    postgres2:
+        image: postgres:latest
+        container_name: "postgres2"
+        ports:
+            - 5433:5432

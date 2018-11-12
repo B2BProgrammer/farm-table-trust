@@ -1,0 +1,12 @@
+{
+    "host": "localhost",
+    "port": "3000",
+    "produce-trust-db": {
+        "dbConfig": {
+            "nosql" : "mongodb",
+            "host": "localhost",
+            "port": 27017,
+            "dbName": "produce-trust-db"
+        }
+    }
+}

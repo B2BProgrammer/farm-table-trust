@@ -1,0 +1,67 @@
+{
+    "poId": "PO100",
+    "docType": "PURCHASEORDER",
+    "productType": "produce",
+    "orderDetails": {
+      "items": [
+        {
+          "produceName": "Cauliflower",
+          "orderQuantity": 10,
+          "UOM": "EACH",
+          "quotedCost": 200
+        },
+        {
+          "produceName": "Brocolli",
+          "orderQuantity": 20,
+          "UOM": "Kilo",
+          "quotedCost": 300
+        }
+      ],
+      "total" : {
+        "totalCost" : 500,
+        "totalItems" : 30
+      }
+    },
+    "orderFromDetails": {
+      "organizationName": "Pizza Hut",
+      "orgDetails": "Largest Pizza chain in world",
+      "primaryContact": {
+        "firstName": "mike",
+        "lastName": "johnson",
+        "contactNumber": "111-111-1111"
+      },
+      "secondaryContact": {
+        "firstName": "raj",
+        "lastName": "singh",
+        "contactNumber": "222-222-2222"
+      }
+    },
+    "orderToDetails": {
+      "organizationName": "patelbrothers",
+      "orgDetails": "largest indian vegetable vendor",
+      "primaryContact": {
+        "firstName": "kusal",
+        "lastName": "patle",
+        "contactNumber": "234-444-5555"
+      },
+      "secondaryContact": {
+        "firstName": "",
+        "lastName": "",
+        "contactNumber": ""
+      }
+    },
+    "growerDetails": {
+      "growerName": "malnad agriculture",
+      "growerDetails": "",
+      "primaryContact": {
+        "firstName": "vijay",
+        "lastName": "gowda",
+        "contactNumber": ""
+      },
+      "secondaryContact": {
+        "firstName": "",
+        "lastName": "",
+        "contactNumber": ""
+      }
+    }
+  }

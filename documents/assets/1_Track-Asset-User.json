@@ -1,0 +1,18 @@
+{
+  "userid": "",
+  "doctype": "USER",
+  "firstname": "",
+  "lastName": " ",
+  "email": "",
+  "org": "",
+  "role": "",
+  "usercreationtime": "",
+  "userexpirationtime": "",
+  "approval": [
+    {
+      "approvedby": "",
+      "userapprovaltimestamp": ""
+    }
+  ],
+  "userstatus": ""
+}
