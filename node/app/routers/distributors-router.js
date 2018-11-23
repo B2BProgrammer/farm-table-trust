@@ -49,6 +49,8 @@ router.get('/purchaseorder/:po_id', distributorsController.getpurchaseorderById)
 
 // Routes for commerce activites performed involving food distributor 
 // -----------(food-producers -->  food distributor)------------------
+
+
 //1. INVOICE LEVEL
 router.post('/invoice', distributorsController.postinvoice);
 router.put('/invoice/:in_id', distributorsController.updateinvoiceById);
