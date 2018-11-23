@@ -22,8 +22,8 @@ echo "/_/   \_\__,_|_| |_| |_|_|_| |_|  \\__,_|\\___|\\__|_|\\___/|_| |_|___/"
 cd ../../fabric-helper
 
 CHANNEL_NAME=mychannel1
-CC_NAME="restaurant"
-CC_SRC_DIR="restaurant/chaincode"
+CC_NAME="farm-table"
+CC_SRC_DIR="farm-table-trust/chaincode"
 CC_IND_DIR="../chain-code/src/restaurant/chaincode"
 # C R E A T E   C H A N N E L
 printf "\n\n============ C R E A T E   C H A N N E L ============\n"

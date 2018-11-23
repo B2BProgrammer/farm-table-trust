@@ -1,0 +1,19 @@
+{
+  "restaurant": {
+    "address": {
+      "building": "1007",
+      "coord": [-73.856077, 40.848447],
+      "street": "Morris Park Ave",
+      "zipcode": "10462"
+    },
+    "borough": "Bronx",
+    "cuisine": "Bakery",
+    "grades": [{
+      "date": "2018-01-01T00:00:00Z",
+      "grade": "B",
+      "score": 14
+    }],
+    "name": "Morris Park Bake Shop",
+    "restaurant_id": "30075445"
+  }
+}

@@ -25,7 +25,9 @@ echo ""
 
 ## Delete all the Docker Images
 function delDckrImages(){
-	printf "\n ===========DELETING All the Docker Images======================\n"	
+	##printf "\n ===========DELETING All the Docker Images======================\n"	
+	docker stop $(docker ps -a -q)
+	docker rm -f $(docker ps -aq)
 	docker rmi -f $(docker images -q)
 }
 
@@ -35,23 +37,24 @@ function pullAllRequiredDckrImages(){
 	printf "\n================All required Docker Images are not available, Starting pull of all required Images======\n"
 
 
-	: ${IMAGE_TAG_1:="x86_64-1.3.0"}		
+	: ${IMAGE_TAG_1:="1.3.0"}		
 	for IMAGE in ca tools orderer peer javaenv ccenv;
 	do
 		docker pull hyperledger/fabric-$IMAGE:$IMAGE_TAG_1
 		docker tag hyperledger/fabric-$IMAGE:$IMAGE_TAG_1 hyperledger/fabric-$IMAGE:latest 
 	done
 
-	: ${IMAGE_TAG_2:="x86_64-0.4.5"}
+	: ${IMAGE_TAG_2:="0.4.14"}
 	for IMAGE in couchdb kafka zookeeper;
 	do
 		docker pull hyperledger/fabric-$IMAGE:$IMAGE_TAG_2
 		docker tag hyperledger/fabric-$IMAGE:$IMAGE_TAG_2 hyperledger/fabric-$IMAGE:latest 
 	done
 
-	docker pull mongo
-	docker pull postgres
-	docker pull redis
+	## Non-HyperLedger Images
+	docker pull mongo:4.1
+	docker pull postgres:11
+	docker pull redis:5.0
 }
 
 
@@ -60,7 +63,7 @@ function pullAllRequiredDckrImages(){
 function startAllRequiredDckrImages(){
 	printf "\n ===========STARTING All the required Docker Images===============\n"
 	#Launch the network
-	docker-compose -f ./docker-compose.yaml -f ./docker-compose-couch.yaml -f ./docker-compose-mongo.yaml up -d
+	docker-compose -f ./docker-compose.yaml -f ./docker-compose-couch.yaml -f ./docker-compose-mongo.yaml -f ./docker-compose-postgres.yaml -f ./docker-compose-redis.yaml up -d
 }
 
 
@@ -84,8 +87,8 @@ function bringAppServerUP(){
 function teardownNetwork(){
 	printf "\n================Down Existing Docker Containers & Delete Docker Images=================\n"
 
-	## 1. Bring Down all the containers
-	docker-compose -f ./docker-compose.yaml -f ./docker-compose-couch.yaml -f ./docker-compose-mongo.yaml down
+	## 1. Bring Down all the containers	
+	docker-compose -f ./docker-compose.yaml -f ./docker-compose-couch.yaml -f ./docker-compose-mongo.yaml -f ./docker-compose-postgres.yaml -f ./docker-compose-redis.yaml down
 	##docker ps -qa | xargs docker rm
 
 	## 2. Remove All teh containers & Docker Images
@@ -99,6 +102,7 @@ function bootstrap(){
 	teardownNetwork
 
 	## 1. Pull All the required Docker Images for BlockChain Project from Docker Hub
+	## Explictly pulling of images, commented as docker-compose will handle both [pull + up] of images
 	pullAllRequiredDckrImages
 
 	## 2. Start All the required Docker Images

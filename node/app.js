@@ -1,16 +1,15 @@
 'use strict';
 
 /**
- * Logging : Winston Module Library + Log4j
+ * 1. Logging : Winston Module Library + Log4j
  */
-//const config = require('config');
 const log4j = require('log4js');
-const logger = log4j.getLogger('Farm-Table-Trust');
+const logger = log4j.getLogger('FARM-TABLE-TRUST-application');
 const wlogger = require('./app/config/winston');
 
 
 /**
- * HTTP Protocol communication to node-app
+ * 3. HTTP Protocol communication to node-app
  * Misc modules imported
  */
 const config = require('config');
@@ -22,14 +21,14 @@ const uuid = require('uuid/v4');
 const bodyparser = require('body-parser');
 
 /**
- * Database : No SQL(MongoDB) - Connection Verification
+ * 4. Database : No SQL(MongoDB) - Connection Verification
  * a. MongoClient
  * b. Mongoose Module Library
  */
 // Using mongoose for DB connection verification
 const mongo = require('mongodb');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/farm-table-trust-db');
+mongoose.connect('mongodb://localhost/farm-table-db');
 let dbconnection = mongoose.connection;
 
 //check the connection
@@ -83,29 +82,35 @@ middleware.setExpress(app);
 
 
 
-
-
-
-
-
-wlogger.info("*** Start the Node Application : App ***");
+wlogger.info("*** Start the FARM-TABLE-TRUST Application : App ***");
 
 /**
  * 6. Access all the Express routes from app.js
  */
 
-const userapi = require('./app/routers/user-router');
-app.use(userapi);
 
-const produceapi = require('./app/routers/produce-router');
-app.use(produceapi);
+const userManagmentapi = require('./app/routers/userManagment-router');
+app.use(userManagmentapi);
 
-const poapi = require('./app/routers/po-router');
-app.use(poapi);
+const foodProducersapi = require('./app/routers/foodProducers-router')
+app.use(foodProducersapi)
 
-const consumerapi = require('./app/routers/consumer-router');
-app.use(consumerapi);
+const distributorsapi = require('./app/routers/distributors-router')
+app.use(distributorsapi)
 
+const foodConsumersapi = require('./app/routers/foodConsumers-router')
+app.use(foodConsumersapi)
+
+
+/* const todoapi = require('./app/routers/todo-router');
+app.use(todoapi);
+
+const learnapi = require('./app/routers/learn-router');
+app.use(learnapi);
+
+const restaurantapi = require('./app/routers/restaurant-router');
+app.use(restaurantapi);
+ */
 const docs_handler = express.static(__dirname + '/app/public/dist');
 swagger.setAppHandler(app);
 

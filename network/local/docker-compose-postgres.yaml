@@ -2,7 +2,7 @@ version: '2'
 services:
     postgres:
         image: postgres:latest
-        container_name: "postgres0"
+        container_name: "postgres1"
         ports:
             - 5432:5432
     postgres2:

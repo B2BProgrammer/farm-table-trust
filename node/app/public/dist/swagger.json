@@ -1,0 +1,4890 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "",
+        "version": "1.0.0",
+        "title": "Procurements Contingent Labor"
+    },
+    "tags": [{
+        "name": "API Specification",
+        "description": "Everything about your Contingent Labor API"
+    }],
+
+    "paths": {
+        "/api/quantity_types": {
+            "get": {
+                "tags": [
+                    "Configuration"
+                ],
+                "summary": "Get all hour restrictions and quantity types",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/companies": {
+            "get": {
+                "tags": [
+                    "Configuration"
+                ],
+                "summary": "Get all Companies",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/recordconfig": {
+            "put": {
+                "tags": [
+                    "Configuration"
+                ],
+                "summary": "Record a Configuration",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Configuration",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Configuration"
+                    }
+                }, {
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/retrieveconfig": {
+            "post": {
+                "tags": [
+                    "Configuration"
+                ],
+                "summary": "Retrieve a Configuration",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "body",
+                    "in": "body",
+                    "description": "role",
+                    "required": true,
+                    "type": "string",
+                    "schema": {
+                        "$ref": "#/definitions/ConfigurationKey"
+                    }
+                }, {
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/getallconfig": {
+            "post": {
+                "tags": [
+                    "Configuration"
+                ],
+                "summary": "Get list of all Configuration",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "body",
+                    "in": "body",
+                    "description": "role",
+                    "required": true,
+                    "type": "string",
+                    "schema": {
+                        "$ref": "#/definitions/ConfigurationKey"
+                    }
+                }, {
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/deleteconfig": {
+            "post": {
+                "tags": [
+                    "Configuration"
+                ],
+                "summary": "Delete a Configuration",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "key",
+                    "in": "body",
+                    "description": "role",
+                    "required": true,
+                    "type": "string",
+                    "schema": {
+                        "$ref": "#/definitions/ConfigurationKey"
+                    }
+                }, {
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "login to time managment dashboard",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "email and password",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Login"
+                    }
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/privacy-statement": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Update privacy statement",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/PrivacyStatement"
+                    }
+                }, {
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/registerusers": {
+            "put": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Request user access to the ledger",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Request access",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/RequestUser"
+                    }
+                }, {
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/updatepwd": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Update user password",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Update",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdatePwd"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/queryuserlist/{role}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Retrieve users by role",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "role",
+                    "in": "path",
+                    "description": "role",
+                    "required": true,
+                    "type": "string"
+
+                }, {
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/users": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Query users by Filter",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Query users by Filter",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/User"
+                    }
+                }, {
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/revokeusers": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "revoke users",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "revoke users",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/RevokeUsers"
+                    }
+                }, {
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/login/auth/role": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Retrieve users auth",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "role",
+                    "in": "query",
+                    "description": "role",
+                    "required": true,
+                    "type": "string"
+
+                }, {
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/queryuserrequests": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Retrieve users access request",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/contract": {
+            "put": {
+                "tags": [
+                    "Purchase Order"
+                ],
+                "summary": "Record Supplier Contract",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Supplier Contract",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/SupplierContract"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Purchase Order"
+                ],
+                "summary": "Update Supplier Contract",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Supplier Contract",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/SupplierContract"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/polineitemlimit": {
+            "post": {
+                "tags": [
+                    "Purchase Order"
+                ],
+                "summary": "Update PO Line Item",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Supplier Contract",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/POLineItemLimit"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/deactivatecontractors": {
+            "post": {
+                "tags": [
+                    "Contractor"
+                ],
+                "summary": "Deactivate contractor(s)",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Deactivate contractor(s)",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ContractorKeys"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid Input"
+                    },
+                    "200": {
+                        "description": "Successfully deactivated contractor(s)"
+                    },
+                    "500": {
+                        "description": "Contractor is inactive"
+                    }
+                }
+            }
+        },
+
+
+        "/getKeys": {
+            "get": {
+                "tags": [
+                    "Contractor"
+                ],
+                "summary": "Get Contractor Keys",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/contractoraddon": {
+            "get": {
+                "tags": [
+                    "Contractor"
+                ],
+                "summary": "Get Contractor Addon",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Contractor"
+                ],
+                "summary": "Add or update Contractor Addons",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Supplier Contract",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ContractorAddon"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/querycontract": {
+            "post": {
+                "tags": [
+                    "Purchase Order"
+                ],
+                "summary": "Retrieve Supplier Contract",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Supplier Contract",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/QuerySupplierContract"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/approvecontract": {
+            "post": {
+                "tags": [
+                    "Purchase Order"
+                ],
+                "summary": "Approve Contract",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Contract",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ApproveContract"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/contractList": {
+            "post": {
+                "tags": [
+                    "Purchase Order"
+                ],
+                "summary": "Query list of all Contracts with full details of each",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/nonapprovedcontractList": {
+            "get": {
+                "tags": [
+                    "Purchase Order"
+                ],
+                "summary": "Retrieve list of all Non approved Contracts",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/contractlistview": {
+            "get": {
+                "tags": [
+                    "Purchase Order"
+                ],
+                "summary": "Retrieve list of all contracts for the dashboard",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/contractoraccounts": {
+            "post": {
+                "tags": [
+                    "Contractor"
+                ],
+                "summary": "Assign Accounts to Contractor(s)",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Assign Accounts to Contractor(s)",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/AssignAccounts"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/contractordelegation": {
+            "post": {
+                "tags": [
+                    "Contractor"
+                ],
+                "summary": "Delegate Contractor",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Delegate Contractor",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/DelegateContractors"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/contractdelegation": {
+            "post": {
+                "tags": [
+                    "Purchase Order"
+                ],
+                "summary": "Delegate Contract",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Delegate Contract",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/DelegateContract"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/purchase_orders/access/revoke": {
+            "put": {
+                "tags": [
+                    "Purchase Order"
+                ],
+                "summary": "remove access to Contract",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "remove access to Contract",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/DelegateContract"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/contractor": {
+            "put": {
+                "tags": [
+                    "Contractor"
+                ],
+                "summary": "Record Contractor",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Contract Details",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Contractor"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Contractor"
+                ],
+                "summary": "Update Contractor",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Contract Details",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Contractor"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/querycontractor": {
+            "post": {
+                "tags": [
+                    "Contractor"
+                ],
+                "summary": "Retrieve Contractor",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Contractor",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/QueryContractor"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/approvecontractor": {
+            "post": {
+                "tags": [
+                    "Contractor"
+                ],
+                "summary": "Approve Contractor",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Contractor",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ApproveContractor"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/contractorlist": {
+            "post": {
+                "tags": [
+                    "Contractor"
+                ],
+                "summary": "Retrieve list of all Contractors",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Purchase Order",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ContractorQueryObject"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/nonapprovedcontractorlist": {
+            "post": {
+                "tags": [
+                    "Contractor"
+                ],
+                "summary": "Retrieve list of all Non approved Contractors",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Contractor"
+                ],
+                "summary": "Retrieve list of all Non approved Contractors",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/contractorlistview": {
+            "get": {
+                "tags": [
+                    "Contractor"
+                ],
+                "summary": "Retrieve list of all contractors for the dashboard",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/timesheet": {
+            "put": {
+                "tags": [
+                    "Timesheet"
+                ],
+                "summary": "Get Timesheet of a contractor",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Timesheet",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/GetTimesheet"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Timesheet"
+                ],
+                "summary": "Save / Submit Timesheet of a contractor",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Timesheet",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/SubmitTimesheet"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/approvetimesheet": {
+            "post": {
+                "tags": [
+                    "Timesheet"
+                ],
+                "summary": "Approve Timesheet of a contractor",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Timesheet",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ApproveTimesheet"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/approvetimes": {
+            "post": {
+                "tags": [
+                    "Timesheet"
+                ],
+                "summary": "Approve Timesheet of a contractor",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Timesheet",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ApproveTimes"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/pendingtimesheetsbyuser": {
+            "get": {
+                "tags": [
+                    "Timesheet"
+                ],
+                "summary": "Get pending Timesheets of a user",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/pendingtimesheetsbyrole": {
+            "get": {
+                "tags": [
+                    "Timesheet"
+                ],
+                "summary": "Get pending Timesheets for a role",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/timesheets/approved": {
+            "get": {
+                "tags": [
+                    "Timesheet"
+                ],
+                "summary": "Get All Approved Timesheets of by date range",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "query",
+                        "name": "startdate",
+                        "description": "Start Date(yyyy-mm-dd)",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "enddate",
+                        "description": "End Date(yyyy-mm-dd)",
+                        "required": true,
+                        "type": "string"
+                    }, {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/timesheets/escalations": {
+            "post": {
+                "tags": [
+                    "Timesheet"
+                ],
+                "summary": "Get All Timesheets of by date range that have been past due for submission",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Timesheet",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/GetTimesheet"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/approvesmartcontracts": {
+            "post": {
+                "tags": [
+                    "Smart Contract"
+                ],
+                "summary": "Approve Smart Contracts",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Approval",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ApproveSmartContracts"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/ilc/reasoncodes": {
+            "get": {
+                "tags": [
+                    "Timesheet"
+                ],
+                "summary": "Get ILC Reason Codes",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/timesheets": {
+            "post": {
+                "tags": [
+                    "Timesheet"
+                ],
+                "summary": "Get All Timesheets of by date range",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Timesheet",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/GetTimesheet"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/delete_hour_restrictions": {
+            "post": {
+                "tags": [
+                    "Smart Contract"
+                ],
+                "summary": "Delete Contractor Quantity",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "UpdateSmartContractStatus",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/HourRestrictions"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/nonapprovedsmartcontracts": {
+            "get": {
+                "tags": [
+                    "Smart Contract"
+                ],
+                "summary": "Retrieve list of all Non approved Smart Contracts",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/hour_restrictions": {
+            "put": {
+                "tags": [
+                    "Smart Contract"
+                ],
+                "summary": "Create Contractor Quantity",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Contractor",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ContractorQuantity"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Smart Contract"
+                ],
+                "summary": "UpdateSmartContractStatus",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "UpdateSmartContractStatus",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/HourRestrictions"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "Authorization",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/contracts_payterms": {
+            "post": {
+                "tags": [
+                    "Smart Contract"
+                ],
+                "summary": "Update Payment Days",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Update Payment Days",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ContractsPaymentDays"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/rate_changes": {
+            "post": {
+                "tags": [
+                    "Smart Contract"
+                ],
+                "summary": "Rate Changes",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "Rate Changes",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/RateChange"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/smartcontractlistview": {
+            "get": {
+                "tags": [
+                    "Smart Contract"
+                ],
+                "summary": "smartcontractlistview",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/statements_of_work": {
+            "post": {
+                "tags": [
+                    "Smart Contract"
+                ],
+                "summary": "Create a new Statement of Work change request",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "body",
+                        "name": "body",
+                        "description": "An array of purchase order",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/SOW"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/account": {
+            "put": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "update an account",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Account",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Account"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "update an account",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "account object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Account"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/account/{accountid}": {
+            "get": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "get an account by id",
+                "description": "",
+                "operationId": "",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "accountid",
+                    "in": "path",
+                    "description": "account id",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                }, {
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Delete an Account",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "path",
+                    "name": "accountid",
+                    "description": "Account Id",
+                    "required": true,
+                    "type": "string"
+                }, {
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/allaccounts": {
+            "get": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Get All accounts",
+                "description": "",
+                "operationId": "",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "header",
+                    "name": "x-access-token",
+                    "description": "Access Token",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/notifications": {
+            "get": {
+                "tags": [
+                    "Notifications"
+                ],
+                "summary": "get all notifications by user",
+                "description": "",
+                "operationId": "",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "description": "Page Number",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Notifications"
+                ],
+                "summary": "update notifications",
+                "description": "",
+                "operationId": "",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "notifications object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Notifications"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/document": {
+            "post": {
+                "tags": [
+                    "Document"
+                ],
+                "summary": "uploads a document",
+                "description": "",
+                "operationId": "uploadFile",
+                "consumes": [
+                    "multipart/form-data",
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "format": "binary",
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "entityid",
+                        "description": "entityid",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "type",
+                        "description": "doc type",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "description",
+                        "description": "description",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "file",
+                        "type": "file",
+                        "multiple": true,
+                        "required": true
+                    }
+                ]
+            }
+
+        },
+        "/document/{documentid}": {
+            "get": {
+                "tags": [
+                    "Document"
+                ],
+                "summary": "Get a document",
+                "description": "",
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "file"
+                        },
+                        "description": "CSV ZIP File"
+                    }
+                },
+                "produces": [
+                    "multipart/form-data"
+                ],
+                "parameters": [{
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "format": "binary",
+                        "type": "string"
+                    },
+                    {
+                        "name": "documentid",
+                        "required": true,
+                        "in": "path",
+                        "type": "string",
+                        "description": "document id"
+                    }
+
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Document"
+                ],
+                "summary": "Delete a document",
+                "description": "",
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "file"
+                        },
+                        "description": "CSV ZIP File"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "format": "binary",
+                        "type": "string"
+                    },
+                    {
+                        "name": "documentid",
+                        "required": true,
+                        "in": "path",
+                        "type": "string",
+                        "description": "document id"
+                    }
+
+                ]
+            }
+        },
+        "/documents": {
+            "post": {
+                "tags": [
+                    "Document"
+                ],
+                "summary": "uploads a document",
+                "description": "",
+                "operationId": "uploadFile",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "format": "binary",
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "upload object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Document"
+                        }
+                    }
+                ]
+            }
+
+        },
+        "/getinvoicedetails": {
+            "post": {
+                "tags": [
+                    "Invoice"
+                ],
+                "summary": "Get invoice details -- Block chain clear to invoice and Incoming Invoice",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "format": "binary",
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Invoice object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/GetInvoice"
+                        }
+                    }
+                ]
+            }
+        },
+        "/invoicelist": {
+            "post": {
+                "tags": [
+                    "Invoice"
+                ],
+                "summary": "List inovices",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "format": "binary",
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Invoice object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/QueryInvoice"
+                        }
+                    }
+                ]
+            }
+
+        },
+        "/invoice": {
+            "put": {
+                "tags": [
+                    "Invoice"
+                ],
+                "summary": "Record inovice",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "format": "binary",
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Invoice object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Invoice"
+                        }
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Invoice"
+                ],
+                "summary": "Update inovice",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "header",
+                        "name": "x-access-token",
+                        "description": "Access Token",
+                        "required": true,
+                        "format": "binary",
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Invoice object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateInvoice"
+                        }
+                    }
+                ]
+            }
+
+        }
+    },
+    "definitions": {
+        "User": {
+            "required": [
+                "email",
+                "email",
+                "role",
+                "status",
+                "org"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "org": {
+                    "type": "string"
+                }
+            }
+        },
+        "Login": {
+            "required": [
+                "email",
+                "password",
+                "org"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "org": {
+                    "type": "string"
+                }
+            }
+        },
+        "RevokeUsers": {
+            "$id": "http://example.com/example.json",
+            "type": "object",
+            "definitions": {},
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "properties": {
+                "reason": {
+                    "$id": "/properties/reason",
+                    "type": "string",
+                    "title": "The Reason Schema ",
+                    "default": "",
+                    "examples": [
+                        "bad user"
+                    ]
+                },
+                "users": {
+                    "$id": "/properties/users",
+                    "type": "array",
+                    "items": {
+                        "$id": "/properties/users/items",
+                        "type": "object",
+                        "properties": {
+                            "email": {
+                                "$id": "/properties/users/items/properties/email",
+                                "type": "string",
+                                "title": "The email Schema ",
+                                "default": "",
+                                "examples": [
+                                    "user1"
+                                ]
+                            },
+                            "org": {
+                                "$id": "/properties/users/items/properties/org",
+                                "type": "string",
+                                "title": "The Org Schema ",
+                                "default": "",
+                                "examples": [
+                                    "org1"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "PrivacyStatement": {
+            "required": [
+                "isagreedforprivacy"
+            ],
+            "properties": {
+                "isagreedforprivacy": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "PONumber": {
+            "required": [
+                "ponumber"
+            ],
+            "properties": {
+                "ponumber": {
+                    "type": "string"
+                }
+            }
+        },
+        "RequestUser": {
+            "$id": "http://example.com/example.json",
+            "type": "array",
+            "items": {
+                "$id": "http://example.com/example.json/items",
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "$id": "http://example.com/example.json/items/properties/email",
+                        "type": "string",
+                        "title": "The Email Schema ",
+                        "default": "",
+                        "examples": [
+                            "string"
+                        ]
+                    },
+                    "role": {
+                        "$id": "http://example.com/example.json/items/properties/role",
+                        "type": "string",
+                        "title": "The Role Schema ",
+                        "default": "",
+                        "examples": [
+                            "string"
+                        ]
+                    }
+                },
+                "required": [
+                    "email",
+                    "role"
+                ]
+            }
+        },
+        "UpdatePwd": {
+            "required": [
+                "email",
+                "password"
+
+            ],
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "SupplierContract": {
+            "definitions": {},
+            "$schema": "http://json-schema.org/draft-06/schema#",
+            "$id": "http://example.com/example.json",
+            "type": "object",
+            "properties": {
+                "doctype": {
+                    "$id": "/properties/doctype",
+                    "type": "string",
+                    "title": "The Doctype Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "SUPPLIERCONTRACT"
+                    ]
+                },
+                "ponumber": {
+                    "$id": "/properties/ponumber",
+                    "type": "string",
+                    "title": "The Ponumber Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "PO128"
+                    ]
+                },
+                "prevponum": {
+                    "$id": "/properties/ponumber",
+                    "type": "string",
+                    "title": "The prev-ponumber Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "PO127"
+                    ]
+                },
+                "renewalpo": {
+                    "$id": "/properties/ponumber",
+                    "type": "string",
+                    "title": "The prev-ponumber Schema.",
+                    "description": "true if the PO is a renewal PO, false otherwise",
+                    "default": "",
+                    "examples": [
+                        "false"
+                    ]
+                },
+                "supplierid": {
+                    "$id": "/properties/supplierid",
+                    "type": "string",
+                    "title": "The Supplierid Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "SUP123"
+                    ]
+                },
+                "vendordescription": {
+                    "$id": "/properties/vendordescription",
+                    "type": "string",
+                    "title": "The Vendordescription Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "INFINITE COMPUTER SOLUTIONS INC"
+                    ]
+                },
+                "poissuedate": {
+                    "$id": "/properties/poissuedate",
+                    "type": "string",
+                    "title": "The Poissuedate Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "2017-01-01"
+                    ]
+                },
+                "postartdate": {
+                    "$id": "/properties/postartdate",
+                    "type": "string",
+                    "title": "The Postartdate Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "2017-01-01"
+                    ]
+                },
+                "poenddate": {
+                    "$id": "/properties/poenddate",
+                    "type": "string",
+                    "title": "The Poenddate Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "2017-12-31"
+                    ]
+                },
+                "paymentterm": {
+                    "$id": "/properties/paymentterm",
+                    "type": "string",
+                    "title": "The Paymentterm Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "TK00"
+                    ]
+                },
+                "paymentdays": {
+                    "$id": "/properties/paymentdays",
+                    "type": "string",
+                    "title": "The Paymentdays Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "75"
+                    ]
+                },
+                "sownum": {
+                    "$id": "/properties/sownum",
+                    "type": "string",
+                    "title": "The Sownum Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "SOW1"
+                    ]
+                },
+                "unitprice": {
+                    "$id": "/properties/unitprice",
+                    "type": "string",
+                    "title": "The Sownum Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "90"
+                    ]
+                },
+
+                "currency": {
+                    "$id": "/properties/currency",
+                    "type": "string",
+                    "title": "The Currency Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "USD"
+                    ]
+                },
+                "csaid": {
+                    "$id": "/properties/csaid",
+                    "type": "string",
+                    "title": "The Csaid Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "councilname": {
+                    "$id": "/properties/councilname",
+                    "type": "string",
+                    "title": "The Councilname Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "council1"
+                    ]
+                },
+                "labortype": {
+                    "$id": "/properties/labortype",
+                    "type": "string",
+                    "title": "The Labortype Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "requestorname": {
+                    "$id": "/properties/requestorname",
+                    "type": "string",
+                    "title": "The Requestorname Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "manager1"
+                    ]
+                },
+                "requesttype": {
+                    "$id": "/properties/requesttype",
+                    "type": "string",
+                    "title": "The Requesttype Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "S2KK2T"
+                    ]
+                },
+                "clientname": {
+                    "$id": "/properties/clientname",
+                    "type": "string",
+                    "title": "The Clientname Schema.",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "DBG"
+                    ]
+                },
+                "items": {
+                    "$id": "/properties/items",
+                    "type": "array",
+                    "items": {
+                        "$id": "/properties/items/items",
+                        "type": "object",
+                        "properties": {
+                            "jobroleid": {
+                                "$id": "/properties/items/items/properties/jobroleid",
+                                "type": "string",
+                                "title": "The Jobroleid Schema.",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "040670"
+                                ]
+                            },
+                            "jobroletitle": {
+                                "$id": "/properties/items/items/properties/jobroletitle",
+                                "type": "string",
+                                "title": "The Jobroletitle Schema.",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "PROJECT MANAGER"
+                                ]
+                            },
+                            "countrycode": {
+                                "$id": "/properties/items/items/properties/countrycode",
+                                "type": "string",
+                                "title": "The Countrycode Schema.",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "147"
+                                ]
+                            },
+                            "companycode": {
+                                "$id": "/properties/items/items/properties/companycode",
+                                "type": "string",
+                                "title": "The Companycode Schema.",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "IBM"
+                                ]
+                            },
+                            "skillid": {
+                                "$id": "/properties/items/items/properties/skillid",
+                                "type": "string",
+                                "title": "The Skillid Schema.",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "S3962"
+                                ]
+                            },
+                            "skilltitle": {
+                                "$id": "/properties/items/items/properties/skilltitle",
+                                "type": "string",
+                                "title": "The Skilltitle Schema.",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "WEBSPHERE PORTAL"
+                                ]
+                            },
+                            "startdate": {
+                                "$id": "/properties/items/items/properties/startdate",
+                                "type": "string",
+                                "title": "The Startdate Schema.",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "2017-01-01"
+                                ]
+                            },
+                            "enddate": {
+                                "$id": "/properties/items/items/properties/enddate",
+                                "type": "string",
+                                "title": "The Enddate Schema.",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "2017-12-31"
+                                ]
+                            },
+                            "straighttime": {
+                                "$id": "/properties/items/items/properties/straighttime",
+                                "type": "object",
+                                "properties": {
+                                    "commoditycode": {
+                                        "$id": "/properties/items/items/properties/straighttime/properties/commoditycode",
+                                        "type": "string",
+                                        "title": "The Commoditycode Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "U91"
+                                        ]
+                                    },
+                                    "orderedvalue": {
+                                        "$id": "/properties/items/items/properties/straighttime/properties/orderedvalue",
+                                        "type": "string",
+                                        "title": "The Orderedvalue Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "1800"
+                                        ]
+                                    },
+                                    "invoicedvalue": {
+                                        "$id": "/properties/items/items/properties/straighttime/properties/invoicedvalue",
+                                        "type": "string",
+                                        "title": "The Invoicedvalue Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "0"
+                                        ]
+                                    },
+                                    "tobedeliveredvalue": {
+                                        "$id": "/properties/items/items/properties/straighttime/properties/tobedeliveredvalue",
+                                        "type": "string",
+                                        "title": "The Tobedeliveredvalue Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "1800"
+                                        ]
+                                    },
+                                    "orderedquantity": {
+                                        "$id": "/properties/items/items/properties/straighttime/properties/orderedquantity",
+                                        "type": "string",
+                                        "title": "The Orderedquantity Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "20"
+                                        ]
+                                    },
+                                    "invoicedquantity": {
+                                        "$id": "/properties/items/items/properties/straighttime/properties/invoicedquantity",
+                                        "type": "string",
+                                        "title": "The Invoicedquantity Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "0"
+                                        ]
+                                    },
+                                    "tobedeliveredquantity": {
+                                        "$id": "/properties/items/items/properties/straighttime/properties/tobedeliveredquantity",
+                                        "type": "string",
+                                        "title": "The Tobedeliveredquantity Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "20"
+                                        ]
+                                    },
+                                    "unitprice": {
+                                        "$id": "/properties/items/items/properties/straighttime/properties/unitprice",
+                                        "type": "string",
+                                        "title": "The Unitprice Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "90"
+                                        ]
+                                    },
+                                    "uom": {
+                                        "$id": "/properties/items/items/properties/straighttime/properties/uom",
+                                        "type": "string",
+                                        "title": "The Uom Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "HR"
+                                        ]
+                                    },
+                                    "shorttext": {
+                                        "$id": "/properties/items/items/properties/straighttime/properties/shorttext",
+                                        "type": "string",
+                                        "title": "The Shorttext Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "TM KENNETH E PETROSKI 01 JAN 2017 31 DEC"
+                                        ]
+                                    }
+                                }
+                            },
+                            "overtime": {
+                                "$id": "/properties/items/items/properties/overtime",
+                                "type": "object",
+                                "properties": {
+                                    "commoditycode": {
+                                        "$id": "/properties/items/items/properties/overtime/properties/commoditycode",
+                                        "type": "string",
+                                        "title": "The Commoditycode Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "U91"
+                                        ]
+                                    },
+                                    "orderedvalue": {
+                                        "$id": "/properties/items/items/properties/overtime/properties/orderedvalue",
+                                        "type": "string",
+                                        "title": "The Orderedvalue Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "1800"
+                                        ]
+                                    },
+                                    "invoicedvalue": {
+                                        "$id": "/properties/items/items/properties/overtime/properties/invoicedvalue",
+                                        "type": "string",
+                                        "title": "The Invoicedvalue Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "0"
+                                        ]
+                                    },
+                                    "tobedeliveredvalue": {
+                                        "$id": "/properties/items/items/properties/overtime/properties/tobedeliveredvalue",
+                                        "type": "string",
+                                        "title": "The Tobedeliveredvalue Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "1800"
+                                        ]
+                                    },
+                                    "orderedquantity": {
+                                        "$id": "/properties/items/items/properties/overtime/properties/orderedquantity",
+                                        "type": "string",
+                                        "title": "The Orderedquantity Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "20"
+                                        ]
+                                    },
+                                    "invoicedquantity": {
+                                        "$id": "/properties/items/items/properties/overtime/properties/invoicedquantity",
+                                        "type": "string",
+                                        "title": "The Invoicedquantity Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "0"
+                                        ]
+                                    },
+                                    "tobedeliveredquantity": {
+                                        "$id": "/properties/items/items/properties/overtime/properties/tobedeliveredquantity",
+                                        "type": "string",
+                                        "title": "The Tobedeliveredquantity Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "20"
+                                        ]
+                                    },
+                                    "unitprice": {
+                                        "$id": "/properties/items/items/properties/overtime/properties/unitprice",
+                                        "type": "string",
+                                        "title": "The Unitprice Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "90"
+                                        ]
+                                    },
+                                    "uom": {
+                                        "$id": "/properties/items/items/properties/overtime/properties/uom",
+                                        "type": "string",
+                                        "title": "The Uom Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "HR"
+                                        ]
+                                    },
+                                    "shorttext": {
+                                        "$id": "/properties/items/items/properties/overtime/properties/shorttext",
+                                        "type": "string",
+                                        "title": "The Shorttext Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "OT KENNETH E PETROSKI 01 JAN 2017 31 DEC"
+                                        ]
+                                    }
+                                }
+                            },
+                            "expense": {
+                                "$id": "/properties/items/items/properties/expense",
+                                "type": "object",
+                                "properties": {
+                                    "commoditycode": {
+                                        "$id": "/properties/items/items/properties/expense/properties/commoditycode",
+                                        "type": "string",
+                                        "title": "The Commoditycode Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "T95"
+                                        ]
+                                    },
+                                    "orderedvalue": {
+                                        "$id": "/properties/items/items/properties/expense/properties/orderedvalue",
+                                        "type": "string",
+                                        "title": "The Orderedvalue Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "180"
+                                        ]
+                                    },
+                                    "invoicedvalue": {
+                                        "$id": "/properties/items/items/properties/expense/properties/invoicedvalue",
+                                        "type": "string",
+                                        "title": "The Invoicedvalue Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "0"
+                                        ]
+                                    },
+                                    "tobedeliveredvalue": {
+                                        "$id": "/properties/items/items/properties/expense/properties/tobedeliveredvalue",
+                                        "type": "string",
+                                        "title": "The Tobedeliveredvalue Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "180"
+                                        ]
+                                    },
+                                    "orderedquantity": {
+                                        "$id": "/properties/items/items/properties/expense/properties/orderedquantity",
+                                        "type": "string",
+                                        "title": "The Orderedquantity Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "2"
+                                        ]
+                                    },
+                                    "invoicedquantity": {
+                                        "$id": "/properties/items/items/properties/expense/properties/invoicedquantity",
+                                        "type": "string",
+                                        "title": "The Invoicedquantity Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "0"
+                                        ]
+                                    },
+                                    "tobedeliveredquantity": {
+                                        "$id": "/properties/items/items/properties/expense/properties/tobedeliveredquantity",
+                                        "type": "string",
+                                        "title": "The Tobedeliveredquantity Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "2"
+                                        ]
+                                    },
+                                    "unitprice": {
+                                        "$id": "/properties/items/items/properties/expense/properties/unitprice",
+                                        "type": "string",
+                                        "title": "The Unitprice Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "90"
+                                        ]
+                                    },
+                                    "uom": {
+                                        "$id": "/properties/items/items/properties/expense/properties/uom",
+                                        "type": "string",
+                                        "title": "The Uom Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "HR"
+                                        ]
+                                    },
+                                    "shorttext": {
+                                        "$id": "/properties/items/items/properties/expense/properties/shorttext",
+                                        "type": "string",
+                                        "title": "The Shorttext Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "EX KENNETH E PETROSKI 01 JAN 2017 31 DEC"
+                                        ]
+                                    }
+                                }
+                            },
+                            "address": {
+                                "$id": "/properties/items/items/properties/address",
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "$id": "/properties/items/items/properties/address/properties/name",
+                                        "type": "string",
+                                        "title": "The Name Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "IBM US"
+                                        ]
+                                    },
+                                    "street": {
+                                        "$id": "/properties/items/items/properties/address/properties/street",
+                                        "type": "string",
+                                        "title": "The Street Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "167 LOGAN CROSSING"
+                                        ]
+                                    },
+                                    "postcode": {
+                                        "$id": "/properties/items/items/properties/address/properties/postcode",
+                                        "type": "string",
+                                        "title": "The Postcode Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "28036"
+                                        ]
+                                    },
+                                    "city": {
+                                        "$id": "/properties/items/items/properties/address/properties/city",
+                                        "type": "string",
+                                        "title": "The City Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "DAVIDSON"
+                                        ]
+                                    },
+                                    "state": {
+                                        "$id": "/properties/items/items/properties/address/properties/state",
+                                        "type": "string",
+                                        "title": "The State Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "NC"
+                                        ]
+                                    },
+                                    "country": {
+                                        "$id": "/properties/items/items/properties/address/properties/country",
+                                        "type": "string",
+                                        "title": "The Country Schema.",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "US"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        },
+        "Contractor": {
+            "required": [
+                "ponumber",
+                "buyercontractorid",
+                "supplierid",
+                "commoditycode",
+                "contractorname",
+                "buyercontractoremail",
+                "suppliercontractorid",
+                "suppliername",
+                "clientname",
+                "paytype",
+                "standardpayrate",
+                "overtimepayrate",
+                "adjustedrate",
+                "effectiveratedate",
+                "expenseeligibility",
+                "locationworked",
+                "actualstartdate",
+                "actualenddate",
+                "workitemnum",
+                "workitemdescription",
+                "jobroledesc",
+                "jobskillset",
+                "skilllevel",
+                "ibmbandlevel",
+                "otvalidtoinvoice",
+                "expensevalidtoinvoice",
+                "backgroundchkflag",
+                "backgroundchkstart",
+                "backgroundchkend",
+                "ilcenabled",
+                "csaid",
+                "councilname",
+                "labortype",
+                "accounts",
+                "workhours",
+                "overtimerate",
+                "overtimehours",
+                "acl"
+            ],
+            "properties": {
+                "ponumber": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                },
+                "buyercontractorid": {
+                    "type": "string"
+                },
+                "supplierid": {
+                    "type": "string"
+                },
+                "commoditycode": {
+                    "type": "string"
+                },
+                "contractorname": {
+                    "type": "string"
+                },
+                "buyercontractoremail": {
+                    "type": "string"
+                },
+                "suppliercontractorid": {
+                    "type": "string"
+                },
+                "suppliername": {
+                    "type": "string"
+                },
+                "standardpayrate": {
+                    "type": "string"
+                },
+                "overtimepayrate": {
+                    "type": "string"
+                },
+                "adjustedrate": {
+                    "type": "string"
+                },
+                "effectiveratedate": {
+                    "type": "string"
+                },
+                "expenseeligibility": {
+                    "type": "string"
+                },
+                "locationworked": {
+                    "type": "string"
+                },
+                "actualstartdate": {
+                    "type": "string"
+                },
+                "actualenddate": {
+                    "type": "string"
+                },
+                "workitemnum": {
+                    "type": "string"
+                },
+                "workitemdescription": {
+                    "type": "string"
+                },
+                "jobroledesc": {
+                    "type": "string"
+                },
+                "jobskillset": {
+                    "type": "string"
+                },
+                "skilllevel": {
+                    "type": "string"
+                },
+                "ibmbandlevel": {
+                    "type": "string"
+                },
+                "otvalidtoinvoice": {
+                    "type": "string"
+                },
+                "expensevalidtoinvoice": {
+                    "type": "string"
+                },
+                "backgroundchkflag": {
+                    "type": "string"
+                },
+                "backgroundchkstart": {
+                    "type": "string"
+                },
+                "backgroundchkend": {
+                    "type": "string"
+                },
+                "ilcenabled": {
+                    "type": "string"
+                },
+                "csaid": {
+                    "type": "string"
+                },
+                "councilname": {
+                    "type": "string"
+                },
+                "labortype": {
+                    "type": "string"
+                },
+                "accounts": {
+                    "type": "object"
+                },
+                "workhours": {
+                    "type": "object"
+                },
+                "overtimerate": {
+                    "type": "object"
+                },
+                "overtimehours": {
+                    "type": "object"
+                },
+                "acl": {
+                    "type": "object"
+                }
+            }
+        },
+        "ContractorQueryObject": {
+            "required": [
+                "uuid",
+                "ponumber",
+                "supplierid",
+                "buyercontractorid",
+                "poconnector",
+                "commoditycode",
+                "sownum",
+                "suppliername",
+                "suppliercontractorid",
+                "contractorname",
+                "buyercontractoremail",
+                "clientname",
+                "locationworked",
+                "actualstartdate",
+                "actualenddate",
+                "backgroundchkflag",
+                "backgroundchkstart",
+                "backgroundchkend",
+                "expenseeligibility",
+                "expensevalidtoinvoice",
+                "overtimevalidtoinvoice",
+                "overtimeeffectivestartdate",
+                "overtimeeffectiveenddate",
+                "paytype",
+                "jobroledesc",
+                "jobskillset",
+                "skilllevel",
+                "ibmbandlevel",
+                "ilcenabled",
+                "poconnector",
+                "samemail",
+                "pmemail",
+                "csaid",
+                "councilname",
+                "labortype",
+                "requestorname",
+                "sownum",
+                "assignment",
+                "projectid",
+                "projectname",
+                "countrycode",
+                "companycode",
+                "sitelocation",
+                "sitelocationid",
+                "controlgroupcode",
+                "groupid",
+                "contractorstatus",
+                "status"
+            ],
+            "properties": {
+                "ponumber": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                },
+                "buyercontractorid": {
+                    "type": "string"
+                },
+                "supplierid": {
+                    "type": "string"
+                },
+                "sownum": {
+                    "type": "string"
+                },
+                "commoditycode": {
+                    "type": "string"
+                },
+                "contractorname": {
+                    "type": "string"
+                },
+                "buyercontractoremail": {
+                    "type": "string"
+                },
+                "suppliercontractorid": {
+                    "type": "string"
+                },
+                "suppliername": {
+                    "type": "string"
+                },
+                "standardpayrate": {
+                    "type": "string"
+                },
+                "overtimepayrate": {
+                    "type": "string"
+                },
+                "adjustedrate": {
+                    "type": "string"
+                },
+                "effectiveratedate": {
+                    "type": "string"
+                },
+                "expenseeligibility": {
+                    "type": "string"
+                },
+                "locationworked": {
+                    "type": "string"
+                },
+                "actualstartdate": {
+                    "type": "string"
+                },
+                "actualenddate": {
+                    "type": "string"
+                },
+                "workitemnum": {
+                    "type": "string"
+                },
+                "workitemdescription": {
+                    "type": "string"
+                },
+                "jobroledesc": {
+                    "type": "string"
+                },
+                "jobskillset": {
+                    "type": "string"
+                },
+                "skilllevel": {
+                    "type": "string"
+                },
+                "ibmbandlevel": {
+                    "type": "string"
+                },
+                "otvalidtoinvoice": {
+                    "type": "string"
+                },
+                "expensevalidtoinvoice": {
+                    "type": "string"
+                },
+                "backgroundchkflag": {
+                    "type": "string"
+                },
+                "backgroundchkstart": {
+                    "type": "string"
+                },
+                "backgroundchkend": {
+                    "type": "string"
+                },
+                "ilcenabled": {
+                    "type": "string"
+                },
+                "csaid": {
+                    "type": "string"
+                },
+                "councilname": {
+                    "type": "string"
+                },
+                "labortype": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "contractorstatus": {
+                    "type": "string"
+                }
+            }
+        },
+        "QuerySupplierContract": {
+            "required": [
+                "ponumber",
+                "supplierid"
+            ],
+            "properties": {
+                "ponumber": {
+                    "type": "string"
+                },
+                "supplierid": {
+                    "type": "string"
+                }
+            }
+        },
+        "QueryContractor": {
+            "required": [
+                "ponumber",
+                "uuid"
+            ],
+            "properties": {
+                "ponumber": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "ApproveContract": {
+            "required": [
+                "ponumber",
+                "supplierid",
+                "rejectioncomment",
+                "approvalstatus"
+            ],
+            "properties": {
+                "ponumber": {
+                    "type": "string"
+                },
+                "supplierid": {
+                    "type": "string"
+                },
+                "rejectioncomment": {
+                    "type": "string"
+                },
+                "approvalstatus": {
+                    "type": "string"
+                }
+            }
+        },
+        "ApproveContractor": {
+            "required": [
+                "ponumber",
+                "uuid",
+                "rejectioncomment",
+                "approvalstatus"
+            ],
+            "properties": {
+                "ponumber": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                },
+                "rejectioncomment": {
+                    "type": "string"
+                },
+                "approvalstatus": {
+                    "type": "string"
+                }
+            }
+        },
+        "GetTimesheet": {
+            "required": [
+                "ponumber",
+                "uuid",
+                "supplierid",
+                "startdate",
+                "enddate"
+            ],
+            "properties": {
+                "ponumber": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                },
+                "supplierid": {
+                    "type": "string"
+                },
+                "startdate": {
+                    "type": "string"
+                },
+                "enddate": {
+                    "type": "string"
+                }
+            }
+        },
+        "SubmitTimesheet": {
+            "required": [
+                "ponumber",
+                "uuid",
+                "startdate",
+                "enddate",
+                "timeentryforperiod"
+            ],
+            "properties": {
+                "ponumber": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                },
+                "startdate": {
+                    "type": "string"
+                },
+                "enddate": {
+                    "type": "string"
+                },
+                "timeentryforperiod": {
+                    "type": "object",
+                    "schema": {
+                        "$ref": "#/definitions/TimeEntryForPeriod"
+                    }
+                }
+            }
+        },
+        "TimeEntryForPeriod": {
+            "required": [
+                "startdate",
+                "enddate",
+                "status",
+                "timeentries",
+                "flexifields"
+            ],
+            "properties": {
+                "startdate": {
+                    "type": "string"
+                },
+                "enddate": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "timeentries": {
+                    "type": "object"
+                },
+                "flexifields": {
+                    "type": "object"
+                }
+            }
+        },
+        "ApproveTimes": {
+            "required": [
+                "timesheets"
+            ],
+            "properties": {
+                "approvalstatus": {
+                    "type": "string"
+                },
+                "rejectioncomment": {
+                    "type": "string"
+                },
+                "timesheets": {
+                    "id": "/properties/timesheet",
+                    "items": {
+                        "type": "object",
+                        "schema": {
+                            "$ref": "#/definitions/ApproveTimesheet"
+                        }
+                    },
+                    "type": "array"
+                }
+            }
+        },
+        "ApproveTimesheet": {
+            "required": [
+                "ponumber",
+                "uuid",
+                "supplierid",
+                "approvalfor",
+                "rejectioncomment",
+                "approvalstatus"
+            ],
+            "properties": {
+                "ponumber": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                },
+                "supplierid": {
+                    "type": "string"
+                },
+                "approvalfor": {
+                    "type": "string"
+                },
+                "rejectioncomment": {
+                    "type": "string"
+                },
+                "approvalstatus": {
+                    "type": "string"
+                }
+            }
+        },
+        "ContractorQuantity": {
+            "required": [
+                "ponumber",
+                "uuid",
+                "quantity",
+                "quantitystartdate",
+                "quantityenddate",
+                "quantitytype"
+            ],
+            "properties": {
+                "ponumber": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                },
+                "quantity": {
+                    "type": "string"
+                },
+                "quantitystartdate": {
+                    "type": "string"
+                },
+                "quantityenddate": {
+                    "type": "string"
+                },
+                "quantitytype": {
+                    "type": "string"
+                }
+            }
+        },
+        "ACL": {
+            "properties": {
+                "pm": {
+                    "properties": {
+                        "participants": {
+                            "items": {
+                                "default": "pm@example.com",
+                                "description": "An explanation about the purpose of this instance.",
+                                "title": "The none schema",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "sam": {
+                    "properties": {
+                        "participants": {
+                            "items": {
+                                "default": "sam@example.com",
+                                "description": "An explanation about the purpose of this instance.",
+                                "title": "The none schema",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "tra": {
+                    "properties": {
+                        "participants": {
+                            "items": {
+                                "default": "sam@example.com",
+                                "description": "An explanation about the purpose of this instance.",
+                                "title": "The none schema",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "DelegateContract": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "definitions": {},
+            "id": "http://example.com/example.json",
+            "properties": {
+                "acl": {
+                    "$ref": "#/definitions/ACL"
+                },
+                "contracts": {
+                    "$ref": "#/definitions/ContractKeys"
+                }
+            },
+            "type": "object"
+        },
+        "DelegateContractors": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "definitions": {},
+            "id": "http://example.com/example.json",
+            "properties": {
+                "acl": {
+                    "$ref": "#/definitions/ACL"
+                },
+                "contractors": {
+                    "$ref": "#/definitions/ContractorKeys"
+                }
+            },
+            "type": "object"
+        },
+        "Accounts": {
+            "id": "/properties/accounts",
+            "items": {
+                "id": "/properties/accounts/items",
+                "properties": {
+                    "accountid": {
+                        "default": "10000000000",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/accounts/items/properties/accountid",
+                        "title": "The accountid schema",
+                        "type": "string"
+                    },
+                    "workitems": {
+                        "id": "/properties/accounts/items/properties/workitems",
+                        "items": {
+                            "id": "/properties/accounts/items/properties/workitems/items",
+                            "properties": {
+                                "activitycodes": {
+                                    "id": "/properties/accounts/items/properties/workitems/items/properties/activitycodes",
+                                    "items": {
+                                        "id": "/properties/accounts/items/properties/workitems/items/properties/activitycodes/items",
+                                        "properties": {
+                                            "activitycode": {
+                                                "default": "A1",
+                                                "description": "An explanation about the purpose of this instance.",
+                                                "id": "/properties/accounts/items/properties/workitems/items/properties/activitycodes/items/properties/activitycode",
+                                                "title": "The activitycode schema",
+                                                "type": "string"
+                                            },
+                                            "billcodes": {
+                                                "id": "/properties/accounts/items/properties/workitems/items/properties/activitycodes/items/properties/billcodes",
+                                                "items": {
+                                                    "default": "B1",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "id": "/properties/accounts/items/properties/workitems/items/properties/activitycodes/items/properties/billcodes/items",
+                                                    "title": "The none schema",
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "workitemid": {
+                                    "default": "W1",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "id": "/properties/accounts/items/properties/workitems/items/properties/workitemid",
+                                    "title": "The workitemid schema",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "ContractorKeys": {
+            "id": "/properties/contractors",
+            "items": {
+                "id": "/properties/contractors/items",
+                "properties": {
+                    "uuid": {
+                        "default": "BC126",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/contractors/items/properties/uuid",
+                        "title": "The uuid schema",
+                        "type": "string"
+                    },
+                    "ponumber": {
+                        "default": "PO128",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/contractors/items/properties/ponumber",
+                        "title": "The ponumber schema",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "ContractKeys": {
+            "id": "/properties/contracts",
+            "items": {
+                "id": "/properties/contracts/items",
+                "properties": {
+                    "supplierid": {
+                        "default": "BC126",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/contractors/items/properties/supplierid",
+                        "title": "The supplierid schema",
+                        "type": "string"
+                    },
+                    "ponumber": {
+                        "default": "PO128",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/contractors/items/properties/ponumber",
+                        "title": "The ponumber schema",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "Smartcontractkeys": {
+            "id": "/properties/contracts",
+            "items": {
+                "id": "/properties/contracts/items",
+                "properties": {
+                    "uuid": {
+                        "default": "213s-DFAF-DS23-ADSGAF-D23X-DSD",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/contracts/items/properties/uuid",
+                        "title": "The uuid schema",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        },
+        "ApproveSmartContracts": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "definitions": {},
+            "id": "http://example.com/example.json",
+            "properties": {
+                "approval": {
+                    "$ref": "#/definitions/Approval"
+                },
+                "contracts": {
+                    "$ref": "#/definitions/Smartcontractkeys"
+                }
+            },
+            "type": "object"
+        },
+        "Approval": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "definitions": {},
+            "id": "http://example.com/example.json",
+            "properties": {
+                "approvalstatus": {
+                    "type": "string"
+                },
+                "rejectioncomment": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "AssignAccounts": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "definitions": {},
+            "id": "http://example.com/example.json",
+            "properties": {
+                "accounts": {
+                    "$ref": "#/definitions/Accounts"
+                },
+                "contractors": {
+                    "$ref": "#/definitions/ContractorKeys"
+                }
+            },
+            "type": "object"
+        },
+        "AssignTRA": {
+            "required": [
+                "ponumber",
+                "buyercontractorid",
+                "acl"
+            ],
+            "properties": {
+                "ponumber": {
+                    "type": "string"
+                },
+                "buyercontractorid": {
+                    "type": "string"
+                },
+                "acl": {
+                    "type": "object",
+                    "schema": {
+                        "$ref": "#/definitions/TRA"
+                    }
+                }
+            }
+        },
+        "TRA": {
+            "required": [
+                "participants"
+            ],
+            "properties": {
+                "participants": {
+                    "type": "object"
+                }
+            }
+        },
+        "UnitPrice": {
+            "required": [
+                "ponumber",
+                "supplierid",
+                "commoditycode",
+                "unitprice",
+                "effectivedate"
+            ],
+            "properties": {
+                "ponumber": {
+                    "type": "string"
+                },
+                "supplierid": {
+                    "type": "string"
+                },
+                "commoditycode": {
+                    "type": "string"
+                },
+                "unitprice": {
+                    "type": "string"
+                },
+                "effectivedate": {
+                    "type": "string"
+                }
+            }
+        },
+        "RateChange": {
+            "required": [
+                "purchase_orders",
+                "unitprice"
+            ],
+            "properties": {
+                "unitprice": {
+                    "type": "string"
+                },
+                "purchase_orders": {
+                    "$ref": "#/definitions/ContractKeys"
+                }
+            },
+            "type": "object"
+        },
+
+        "SOW": {
+            "required": [
+                "purchase_orders",
+                "sownum"
+            ],
+            "properties": {
+                "sownum": {
+                    "type": "string"
+                },
+                "purchase_orders": {
+                    "$ref": "#/definitions/ContractKeys"
+                }
+            },
+            "type": "object"
+        },
+        "HourRestrictions": {
+            "required": [
+                "ponumber",
+                "buyercontractorid",
+                "quantity",
+                "quantitystartdate",
+                "quantityenddate",
+                "quantitytype"
+            ],
+
+            "properties": {
+                "ponumber": {
+                    "type": "string"
+                },
+                "buyercontractorid": {
+                    "type": "string"
+                },
+                "quantity": {
+                    "type": "string"
+                },
+                "quantitystartdate": {
+                    "type": "string"
+                },
+                "quantityenddate": {
+                    "type": "string"
+                },
+                "quantitytype": {
+                    "type": "string"
+                },
+
+                "contractors": {
+                    "$ref": "#/definitions/ContractorKeys"
+                }
+            },
+            "type": "object"
+        },
+        "Account": {
+            "properties": {
+                "account": {
+                    "type": "string"
+                }
+            }
+        },
+        "Notifications": {
+            "required": [
+                "notifications"
+            ],
+            "properties": {
+                "notifications": {
+                    "schema": {
+                        "name": "notifications",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/Notification"
+                        }
+                    }
+                }
+            }
+        },
+        "Notification": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "ContractsPaymentDays": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "definitions": {},
+            "id": "http://example.com/example.json",
+            "properties": {
+                "payterm": {
+                    "type": "string"
+                },
+                "effectivedate": {
+                    "type": "string"
+                },
+                "paymentdays": {
+                    "type": "string"
+                },
+                "purchase_orders": {
+                    "$ref": "#/definitions/ContractKeys"
+                }
+            },
+            "type": "object"
+        },
+        "SmartContractHourRestriction": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "definitions": {},
+            "id": "http://example.com/example.json",
+            "properties": {
+                "quantity": {
+                    "type": "string"
+                },
+                "quantitytype": {
+                    "type": "string"
+                },
+                "quantitystartdate": {
+                    "type": "string"
+                },
+                "quantityenddate": {
+                    "type": "string"
+                },
+                "contractors": {
+                    "$ref": "#/definitions/ContractorKeys"
+                }
+            },
+            "type": "object"
+        },
+        "Document": {
+            "required": [
+                "id",
+                "entityid",
+                "hash",
+                "type",
+                "description"
+            ],
+            "properties": {
+                "id": {
+                    "type": "id"
+                },
+                "entityid": {
+                    "type": "string"
+                },
+                "hash": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "ContractorAddon": {
+            "$id": "http://example.com/example.json",
+            "type": "array",
+            "definitions": {},
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "items": {
+                "$id": "http://example.com/example.json/items",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "$id": "http://example.com/example.json/items/properties/id",
+                        "type": "string",
+                        "title": "The Id Schema ",
+                        "default": "",
+                        "examples": [
+                            "fieldid"
+                        ]
+                    },
+                    "label": {
+                        "$id": "http://example.com/example.json/items/properties/label",
+                        "type": "string",
+                        "title": "The Label Schema ",
+                        "default": "",
+                        "examples": [
+                            "Field Label"
+                        ]
+                    },
+                    "type": {
+                        "$id": "http://example.com/example.json/items/properties/type",
+                        "type": "string",
+                        "title": "The Type Schema ",
+                        "default": "",
+                        "examples": [
+                            "text"
+                        ]
+                    },
+                    "permissions": {
+                        "$id": "http://example.com/example.json/items/properties/permissions",
+                        "type": "object",
+                        "properties": {
+                            "admin": {
+                                "$id": "http://example.com/example.json/items/properties/permissions/properties/admin",
+                                "type": "string",
+                                "title": "The Admin Schema ",
+                                "default": "",
+                                "examples": [
+                                    "view"
+                                ]
+                            },
+                            "sa": {
+                                "$id": "http://example.com/example.json/items/properties/permissions/properties/sa",
+                                "type": "string",
+                                "title": "The Sa Schema ",
+                                "default": "",
+                                "examples": [
+                                    "view"
+                                ]
+                            },
+                            "pm": {
+                                "$id": "http://example.com/example.json/items/properties/permissions/properties/pm",
+                                "type": "string",
+                                "title": "The Pm Schema ",
+                                "default": "",
+                                "examples": [
+                                    "edit"
+                                ]
+                            },
+                            "sam": {
+                                "$id": "http://example.com/example.json/items/properties/permissions/properties/sam",
+                                "type": "string",
+                                "title": "The Sam Schema ",
+                                "default": "",
+                                "examples": [
+                                    "approve"
+                                ]
+                            },
+                            "srm": {
+                                "$id": "http://example.com/example.json/items/properties/permissions/properties/srm",
+                                "type": "string",
+                                "title": "The Srm Schema ",
+                                "default": "",
+                                "examples": [
+                                    "none"
+                                ]
+                            },
+                            "contractor": {
+                                "$id": "http://example.com/example.json/items/properties/permissions/properties/contractor",
+                                "type": "string",
+                                "title": "The Contractor Schema ",
+                                "default": "",
+                                "examples": [
+                                    "view"
+                                ]
+                            },
+                            "tra": {
+                                "$id": "http://example.com/example.json/items/properties/permissions/properties/tra",
+                                "type": "string",
+                                "title": "The Tra Schema ",
+                                "default": "",
+                                "examples": [
+                                    "view"
+                                ]
+                            },
+                            "cca": {
+                                "$id": "http://example.com/example.json/items/properties/permissions/properties/cca",
+                                "type": "string",
+                                "title": "The Cca Schema ",
+                                "default": "",
+                                "examples": [
+                                    "view"
+                                ]
+                            }
+                        }
+                    },
+                    "table": {
+                        "$id": "http://example.com/example.json/items/properties/table",
+                        "type": "boolean",
+                        "title": "The Table Schema ",
+                        "default": false,
+                        "examples": [
+                            false
+                        ]
+                    },
+                    "shortTable": {
+                        "$id": "http://example.com/example.json/items/properties/shortTable",
+                        "type": "boolean",
+                        "title": "The Shorttable Schema ",
+                        "default": false,
+                        "examples": [
+                            false
+                        ]
+                    },
+                    "page": {
+                        "$id": "http://example.com/example.json/items/properties/page",
+                        "type": "boolean",
+                        "title": "The Page Schema ",
+                        "default": false,
+                        "examples": [
+                            true
+                        ]
+                    },
+                    "required": {
+                        "$id": "http://example.com/example.json/items/properties/required",
+                        "type": "boolean",
+                        "title": "The Required Schema ",
+                        "default": false,
+                        "examples": [
+                            false
+                        ]
+                    }
+                }
+            }
+        },
+        "GetInvoice": {
+            "required": [
+                "bcinvkey"
+            ],
+            "properties": {
+                "supplierid": {
+                    "type": "string"
+                },
+                "invoicenumber": {
+                    "type": "string"
+                },
+                "bcinvkey": {
+                    "type": "string"
+                }
+            }
+
+        },
+        "Configuration": {
+            "required": [
+                "key"
+            ],
+            "properties": {
+                "key": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            }
+        },
+        "ConfigurationKey": {
+            "required": [
+                "key"
+            ],
+            "properties": {
+                "key": {
+                    "type": "string"
+                }
+            }
+        },
+        "Invoice": {
+            "$id": "http://example.com/example.json",
+            "type": "object",
+            "definitions": {},
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "properties": {
+                "invoicenumber": {
+                    "$id": "/properties/invoicenumber",
+                    "type": "string",
+                    "title": "The Invoicenumber Schema ",
+                    "default": "",
+                    "examples": [
+                        "122333"
+                    ]
+                },
+                "commoditycode": {
+                    "$id": "/properties/commoditycode",
+                    "type": "string",
+                    "title": "The Commoditycode Schema ",
+                    "default": "",
+                    "examples": [
+                        "123"
+                    ]
+                },
+                "fyear": {
+                    "$id": "/properties/fyear",
+                    "type": "integer",
+                    "title": "The Fyear Schema ",
+                    "default": 0,
+                    "examples": [
+                        2017
+                    ]
+                },
+                "ponumber": {
+                    "$id": "/properties/ponumber",
+                    "type": "string",
+                    "title": "The Ponumber Schema ",
+                    "default": "",
+                    "examples": [
+                        "po123"
+                    ]
+                },
+                "supplierid": {
+                    "$id": "/properties/supplierid",
+                    "type": "string",
+                    "title": "The supplierid Schema ",
+                    "default": "",
+                    "examples": [
+                        "V123"
+                    ]
+                },
+                "vendorname": {
+                    "$id": "/properties/vendorname",
+                    "type": "string",
+                    "title": "The Vendorname Schema ",
+                    "default": "",
+                    "examples": [
+                        "Infi"
+                    ]
+                },
+                "vendorrefid": {
+                    "$id": "/properties/vendorrefid",
+                    "type": "string",
+                    "title": "The Vendorrefid Schema ",
+                    "default": "",
+                    "examples": [
+                        "ref123"
+                    ]
+                },
+                "doctypecode": {
+                    "$id": "/properties/doctypecode",
+                    "type": "string",
+                    "title": "The Doctypecode Schema ",
+                    "default": "",
+                    "examples": [
+                        "R7"
+                    ]
+                },
+                "invoicedate": {
+                    "$id": "/properties/invoicedate",
+                    "type": "string",
+                    "title": "The Invoicedate Schema ",
+                    "default": "",
+                    "examples": [
+                        "6/21/2017"
+                    ]
+                },
+                "grossamount": {
+                    "$id": "/properties/grossamount",
+                    "type": "integer",
+                    "title": "The Grossamount Schema ",
+                    "default": 0,
+                    "examples": [
+                        1234
+                    ]
+                },
+                "items": {
+                    "$id": "/properties/items",
+                    "type": "array",
+                    "items": {
+                        "$id": "/properties/items/items",
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "$id": "/properties/items/items/properties/type",
+                                "type": "integer",
+                                "title": "The Type Schema ",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "grossamt": {
+                                "$id": "/properties/items/items/properties/grossamt",
+                                "type": "number",
+                                "title": "The Grossamt Schema ",
+                                "default": 0,
+                                "examples": [
+                                    2728.320068359375
+                                ]
+                            },
+                            "netamt": {
+                                "$id": "/properties/items/items/properties/netamt",
+                                "type": "number",
+                                "title": "The Netamt Schema ",
+                                "default": 0,
+                                "examples": [
+                                    2728.320068359375
+                                ]
+                            },
+                            "debcredcode": {
+                                "$id": "/properties/items/items/properties/debcredcode",
+                                "type": "string",
+                                "title": "The Debcredcode Schema ",
+                                "default": "",
+                                "examples": [
+                                    "D"
+                                ]
+                            },
+                            "quantity": {
+                                "$id": "/properties/items/items/properties/quantity",
+                                "type": "integer",
+                                "title": "The Quantity Schema ",
+                                "default": 0,
+                                "examples": [
+                                    21
+                                ]
+                            },
+                            "uom": {
+                                "$id": "/properties/items/items/properties/uom",
+                                "type": "string",
+                                "title": "The Uom Schema ",
+                                "default": "",
+                                "examples": [
+                                    "HR"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "UpdateInvoice": {
+            "$id": "http://example.com/example.json",
+            "type": "object",
+            "definitions": {},
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "properties": {
+                "invoicenumber": {
+                    "$id": "/properties/invoicenumber",
+                    "type": "string",
+                    "title": "The Invoicenumber Schema ",
+                    "default": "",
+                    "examples": [
+                        "122333"
+                    ]
+                },
+                "ponumber": {
+                    "$id": "/properties/ponumber",
+                    "type": "string",
+                    "title": "The Ponumber Schema ",
+                    "default": "",
+                    "examples": [
+                        "po123"
+                    ]
+                },
+                "bcinvkey": {
+                    "$id": "/properties/bcinvkey",
+                    "type": "string",
+                    "title": "The bcinvkey Schema ",
+                    "default": "",
+                    "examples": [
+                        "V123"
+                    ]
+                },
+                "supplierid": {
+                    "$id": "/properties/supplierid",
+                    "type": "string",
+                    "title": "The supplierid Schema ",
+                    "default": "",
+                    "examples": [
+                        "V123"
+                    ]
+                }
+            }
+        },
+        "QueryInvoice": {
+            "properties": {
+                "invoicenumber": {
+                    "type": "string"
+                },
+                "ponumber": {
+                    "type": "string"
+                },
+                "supplierid": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "bcinvkey": {
+                    "type": "string"
+                }
+            }
+        },
+        "POLineItemLimit": {
+            "$id": "http://example.com/example.json",
+            "type": "object",
+            "properties": {
+                "ponumber": {
+                    "$id": "/properties/ponumber",
+                    "type": "string",
+                    "title": "The Ponumber Schema ",
+                    "default": "",
+                    "examples": [
+                        "PO128"
+                    ]
+                },
+                "supplierid": {
+                    "$id": "/properties/supplierid",
+                    "type": "string",
+                    "title": "The Supplierid Schema ",
+                    "default": "",
+                    "examples": [
+                        "SUP123"
+                    ]
+                },
+                "uuid": {
+                    "$id": "/properties/uuid",
+                    "type": "string",
+                    "title": "The Uuid Schema ",
+                    "default": "",
+                    "examples": [
+                        "79376aca-f9bb-4df7-afa9-6d88d281b332"
+                    ]
+                },
+                "limit": {
+                    "$id": "/properties/limit",
+                    "type": "integer",
+                    "title": "The Limit Schema ",
+                    "default": 0,
+                    "examples": [
+                        "79376aca-f9bb-4df7-afa9-6d88d281b332"
+                    ]
+                }
+            },
+            "required": [
+                "ponumber",
+                "supplierid",
+                "uuid",
+                "limit"
+            ]
+        }
+    }
+}
