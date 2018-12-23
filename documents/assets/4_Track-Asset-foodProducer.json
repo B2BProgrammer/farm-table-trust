@@ -1,0 +1,25 @@
+{
+    "foodproducerId" : "F1000",
+    "docType" : "FOODPRODUCER",
+    "acl" : {
+        
+    },
+    "foodproducerName" : "Malnad Agricultures",
+    "foodproducerDescription" : "Malnad Agriculture in Bangalore",
+    "foodproducerContactDetails" : {
+      "firstname" : "Rajesh",
+      "lastname" : "Gowda",
+      "address1": "1345 Street",
+      "address2": "Shimoga",
+      "city" : "Shimoga",
+      "State" : "Karnataka",
+      "telephone" : ""
+    },
+    "foodproducerFinancialDetails" : {
+      "bankname" : "SBI",
+      "bankbranch" : "Bangalore",
+      "accountnumber": "ACC124354554",
+      "telephone": "3459009888"
+    }
+    
+  }

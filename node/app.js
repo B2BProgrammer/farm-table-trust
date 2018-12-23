@@ -1,51 +1,45 @@
-'use strict';
+'use strict'
 
 /**
  * 1. Logging : Winston Module Library + Log4j
  */
-const log4j = require('log4js');
-const logger = log4j.getLogger('FARM-TABLE-TRUST-application');
-const wlogger = require('./app/config/winston');
-
+let log4j = require('log4js')
+let logger = log4j.getLogger('FARM-TABLE-TRUST-application')
+let wlogger = require('./app/config/winston')
 
 /**
- * 3. HTTP Protocol communication to node-app
+ * 2. HTTP Protocol communication to node-app
  * Misc modules imported
  */
-const config = require('config');
-const http = require('http');
-const host = process.env.HOST || config.get('host');
-const port = process.env.PORT || config.get('port');
-const uuid = require('uuid/v4');
+let config = require('config');
+let http = require('http');
+let host = config.get('host');
+let port = config.get('port');
+let uuid = require('uuid/v4');
 
-const bodyparser = require('body-parser');
+let bodyparser = require('body-parser');
+
 
 /**
- * 4. Database : No SQL(MongoDB) - Connection Verification
+ * 3. Database : No SQL(MongoDB) - Connection Verification
  * a. MongoClient
  * b. Mongoose Module Library
  */
 // Using mongoose for DB connection verification
 const mongo = require('mongodb');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/farm-table-db');
+mongoose.connect('mongodb://localhost/farm-table-trust-db');
 let dbconnection = mongoose.connection;
 
 //check the connection
 dbconnection.once('open', function () {
-  wlogger.info('connected to mongoDB');
+    wlogger.info('connected to mongoDB');
 });
 
 
-/**
- * 5. Importing custom built Libraries/Functions/Constants/Configurations
- *  from within scope of project
- */
-const constants = require('./constants.js');
-
 
 /*
- * 1. REST Ready Application : Express Module Libraries
+ * 4. REST Ready Application : Express Module Libraries
  */
 const express = require('express');
 const subpath = express();
@@ -66,29 +60,13 @@ const middleware = require('./app/middleware/auth');
 // Configuration Setting of app - Express Object
 middleware.setExpress(app);
 
-// add & configure middleware
-/* app.use(session({
-  genid: (req) => {
-    console.log('Inside the session middleware')
-    console.log(req.sessionID)
-    return uuid() // use UUIDs for session IDs
-  },
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true
-}))
- */
-
-
-
 
 wlogger.info("*** Start the FARM-TABLE-TRUST Application : App ***");
 
+
 /**
- * 6. Access all the Express routes from app.js
+ * 5. Access all the Express routes from app.js
  */
-
-
 const userManagmentapi = require('./app/routers/userManagment-router');
 app.use(userManagmentapi);
 
@@ -102,24 +80,15 @@ const foodConsumersapi = require('./app/routers/foodConsumers-router')
 app.use(foodConsumersapi)
 
 
-/* const todoapi = require('./app/routers/todo-router');
-app.use(todoapi);
-
-const learnapi = require('./app/routers/learn-router');
-app.use(learnapi);
-
-const restaurantapi = require('./app/routers/restaurant-router');
-app.use(restaurantapi);
- */
 const docs_handler = express.static(__dirname + '/app/public/dist');
 swagger.setAppHandler(app);
 
 
 /**
- * 7. Create the http Server from core-Node module, Listening at PORT 3000
+ * 6. Create the http Server from core-Node module, Listening at PORT 3000
  */
 http.createServer(app).listen(port, function () {
-  wlogger.info('****************** SERVER STARTED ************************');
-  wlogger.info('**************  http://' + host + ':' + port + '******************');
-  // webSocketService.initialize(server);
-});
+    wlogger.info('****************** SERVER STARTED ************************');
+    wlogger.info('**************  http://' + host + ':' + port + '******************');
+    // webSocketService.initialize(server);
+  });
