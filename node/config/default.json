@@ -1,12 +1,12 @@
 {
     "host": "localhost",
     "port": "3000",
-    "boot-node-db": {
+    "farm-table-trust-db": {
         "dbConfig": {
             "nosql" : "mongodb",
             "host": "localhost",
             "port": 27017,
-            "dbName": "boot-node-db"
+            "dbName": "farm-table-trust-db"
         }
     }
 }

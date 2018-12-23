@@ -59,13 +59,14 @@ POST - best for filters,queries ??
 router.use(myParser.urlencoded({extended : true}));
 router.post('/login',userMgmtController.login);
 router.get('/login',userMgmtController.getlogin);
-router.post('/registerusers',userMgmtController.registerUsers);
-router.post('/changepassword',userMgmtController.changePassword);
-router.post('/forgotpassword',userMgmtController.forgotPassword);
 
-router.post('/users',userMgmtController.users);
-router.post('/expiringusers',userMgmtController.expiringUsers);
-router.post('/revokingusers',userMgmtController.revokingUsers);
-router.post('/logout', userMgmtController.logout);
+// router.post('/registerusers',userMgmtController.registerUsers);
+// router.post('/changepassword',userMgmtController.changePassword);
+// router.post('/forgotpassword',userMgmtController.forgotPassword);
+
+// router.post('/users',userMgmtController.users);
+// router.post('/expiringusers',userMgmtController.expiringUsers);
+// router.post('/revokingusers',userMgmtController.revokingUsers);
+// router.post('/logout', userMgmtController.logout);
 
 module.exports = router;
