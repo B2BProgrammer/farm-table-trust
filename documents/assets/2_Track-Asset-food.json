@@ -1,0 +1,63 @@
+{
+  "produceId": "P1000",
+  "docType": "PRODUCE",
+  "acl": {
+    "growers": {},
+    "middleman": {},
+    "consumers": {}
+  },
+  "produceName": "cauliflower",
+  "produceDescription": "Grown in India, having red color",
+  "produceDetails": {
+    "biologicalName": "XXXXX",
+    "color": "",
+    "dimensions": {
+      "length": 3,
+      "breadth": 2,
+      "height": 1,
+      "thickness": 20,
+      "weight" : 100,
+      "unit" : 10
+    }
+  },
+  "producedetails": {
+    "isgrowninFarm": true,
+    "ispoultry": false,
+    "isfactorymanufactured": false  
+  },
+  "fertilizerdetails": {
+    "organic": false,
+    "factory": "Hindustan",
+    "chemicallevel": "00.03"
+  },
+  "geographicalInformation": {
+    "region": "asia",
+    "country": "india",
+    "latitude": "",
+    "longitude": ""
+  },
+  "isgmo": true,
+  "isEdible": "",
+  "ageRestrictions": {
+    "teen": "no",
+    "adult": "no",
+    "old": "no"
+  },
+  "pricingInformation": {
+    "grower": {
+      "growerQuoted": 100,
+      "growerSold": 80
+    },
+    "middleman" : {
+      "middlemanQuoted": 70,
+      "middlemanBought": 80
+    },
+     "consumer" : {
+      "consumerQuoted": 100,
+      "consumerBought": 120
+    }
+  },
+  "packagingInformation" : {
+    "isPacked" : true
+  }
+}

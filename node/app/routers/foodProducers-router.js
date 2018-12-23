@@ -29,18 +29,22 @@ wlogger.info("***Execute foodProducers-router***");
 router.use(myParser.urlencoded({
     extended: true
 }));
+
+
+
+
 // Routes for Lifecycle of food Producer (Eg : agriculturist/poultry/farm)
 router.post('/foodProducersInfo', foodProducersController.postfoodProducersInfo);
-router.put('/foodProducersInfo', foodProducersController.updatefoodProducersInfo);
+// router.put('/foodProducersInfo', foodProducersController.updatefoodProducersInfo);
 router.get('/foodProducersInfo', foodProducersController.getAllfoodProducers);
-router.post('/foodProducersInfo/:foodProducers_id', foodProducersController.foodProducersById);
-router.delete('/foodProducersInfo/:foodProducers_id', foodProducersController.deletefoodProducersById);
+router.get('/foodProducersInfo/:foodProducers_id', foodProducersController.getfoodProducersById);
+// router.delete('/foodProducersInfo/:foodProducers_id', foodProducersController.deletefoodProducersById);
 
 // Routes for Lifecycle of food (Eg : produce/vegetables/meat/poultry)
 router.post('/foodInfo', foodProducersController.postfoodInfo);
-router.put('/foodInfo', foodProducersController.updatefoodInfo);
-router.get('/foodInfo', foodProducersController.getfoodInfo);
-router.post('/foodInfo/:foodInfo_id', foodProducersController.foodInfoById);
-router.delete('/foodInfo/:foodInfo_id', foodProducersController.deletefoodInfoById);
+// router.put('/foodInfo', foodProducersController.updatefoodInfo);
+router.get('/foodInfo', foodProducersController.getAllfoodInfo);
+// router.post('/foodInfo/:foodInfo_id', foodProducersController.foodInfoById);
+// router.delete('/foodInfo/:foodInfo_id', foodProducersController.deletefoodInfoById);
 
 module.exports = router;

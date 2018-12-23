@@ -31,11 +31,11 @@ router.use(myParser.urlencoded({
 }));
 
 // Routes for Lifecycle of food consumers (Eg : restaurants/family-food-shoppers)
-router.post('/foodConsumersInfo', foodConsumersController.postfoodConsumersInfo);
-router.put('/foodConsumersInfo', foodConsumersController.updatefoodConsumersInfo);
-router.get('/foodConsumersAllInfo', foodConsumersController.getallfoodConsumers);
-router.post('/foodConsumersInfo/:foodConsumers_id', foodConsumersController.foodConsumersInfoById);
-router.delete('/foodConsumersInfo/:foodConsumers_id', foodConsumersController.deletefoodConsumersById);
+// router.post('/foodConsumersInfo', foodConsumersController.postfoodConsumersInfo);
+// router.put('/foodConsumersInfo', foodConsumersController.updatefoodConsumersInfo);
+// router.get('/foodConsumersAllInfo', foodConsumersController.getallfoodConsumers);
+// router.post('/foodConsumersInfo/:foodConsumers_id', foodConsumersController.foodConsumersInfoById);
+// router.delete('/foodConsumersInfo/:foodConsumers_id', foodConsumersController.deletefoodConsumersById);
 
 
 module.exports = router;
