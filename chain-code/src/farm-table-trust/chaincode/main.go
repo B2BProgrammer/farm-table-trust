@@ -24,8 +24,8 @@ const (
 	CUSRINFO string = "CreateUser"
 	QUSRINFO string = "QueryUser"
 
-	CPOINFO string = "CreatePo"
-	QPOINFO string = "QueryPo"
+	CPOINFO string = "CreatePO"
+	QPOINFO string = "QueryPO"
 
 	CPRODINFO string = "CreateProduce"
 	QPRODINFO string = "QueryProduce"
@@ -40,6 +40,14 @@ func (t *FarmTableTrustChainCode) initMaps() {
 	t.tableMap = make(map[string]int)
 	t.funcMap = make(map[string]InvokeFunc)
 
+	t.funcMap[CUSRINFP] = CreateUser
+	t.funcMap[QUSRINFO] = QueryUser
+
+	t.funcMap[CPOINFO] = CreatePO
+	t.funcMap[QPOINFO] = QueryPO
+
+	t.funcMap[CPRODINFO] = CreateProduce
+	t.funcMap[QPRODINFO] = QueryProduce
 }
 
 /**

@@ -6,7 +6,10 @@ var dbConfig = config.get('farm-table-trust-db.dbConfig');
 const url = dbConfig.nosql + "://" + dbConfig.host + ":" + dbConfig.port + "/" ;
 
 const log4j = require('log4js');
-const logger = log4j.getLogger('APP-DB');
+const logger = log4j.getLogger('MONGO-DB-UTIL');
+
+
+
 
 /**
  * DB Utility 
