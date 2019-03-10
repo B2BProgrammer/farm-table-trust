@@ -65,7 +65,6 @@ module.exports.login = async function (req, res) {
             "token": token
         };
         return res.status(200).send(JSON.stringify(response))
-
     } catch (error) {
         logger.error("Error while login", error);
         errorMsg.detail = "Not Authorized";
@@ -80,3 +79,12 @@ module.exports.getlogin = async function (req, res) {
     console.log(req.sessionID)
     res.send(`You got the login page!\n`);
 };
+
+
+
+/**
+ * 
+ */
+module.exports.registerUsers = async function(req, res) {
+    logger.info("***** Execute the registerUsers");
+}

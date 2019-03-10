@@ -35,7 +35,7 @@ router.use(myParser.urlencoded({
 
 // Routes for Lifecycle of food Producer (Eg : agriculturist/poultry/farm)
 router.post('/foodProducersInfo', foodProducersController.postfoodProducersInfo);
-// router.put('/foodProducersInfo', foodProducersController.updatefoodProducersInfo);
+router.put('/foodProducersInfo', foodProducersController.updatefoodProducersInfo);
 router.get('/foodProducersInfo', foodProducersController.getAllfoodProducers);
 router.get('/foodProducersInfo/:foodProducers_id', foodProducersController.getfoodProducersById);
 // router.delete('/foodProducersInfo/:foodProducers_id', foodProducersController.deletefoodProducersById);

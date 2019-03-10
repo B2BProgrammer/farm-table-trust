@@ -78,8 +78,4 @@ module.exports.setExpress = function (app) {
         res.locals.user = req.user || null;
         next();
     });
-
-
-
-
 }
